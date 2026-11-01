@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="dashboard-container">
+
+        <header class="dashboard-header">
+            <div>
+                <h1>Student Portal</h1>
+                <p>Student Dashboard</p>
+            </div>
+            <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+        </header>
+
+        <section class="welcome-card">
+            <h2>Welcome, {{ name }}!</h2>
+            <p>Successfully logged in to your student account.</p>
+        </section>
+
+        <section class="profile-card">
+            <h2>My Profile</h2>
+
+            <div class="profile-details">
+                <div>
+                    <span>Student Name</span>
+                    <h3>{{ name }}</h3>
+                </div>
+
+                <div>
+                    <span>Email Address</span>
+                    <h3>{{ email }}</h3>
+                </div>
+
+                <div>
+                    <span>Course</span>
+                    <h3>{{ course }}</h3>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            Student Portal | Full Stack Development Project
+        </footer>
+
+    </div>
+
+</body>
+</html>

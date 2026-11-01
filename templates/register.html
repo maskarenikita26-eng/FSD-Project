@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-box">
+            <h1>Student Portal</h1>
+            <h2>Create Account</h2>
+            <p>Register to access your student dashboard</p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% for category, message in messages %}
+                    <div class="message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('register') }}">
+
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Enter your full name" required>
+
+                <label>Email Address</label>
+                <input type="email" name="email" placeholder="Enter your email" required>
+
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Minimum 6 characters" minlength="6" required>
+
+                <label>Course</label>
+                <select name="course" required>
+                    <option value="">Select your course</option>
+                    <option value="B.Sc IT">B.Sc IT</option>
+                    <option value="BCA">BCA</option>
+                    <option value="B.Sc Computer Science">B.Sc Computer Science</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <button type="submit">Register Now</button>
+
+            </form>
+
+            <p class="bottom-text">
+                Already have an account?
+                <a href="{{ url_for('login') }}">Login Here</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
