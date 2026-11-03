@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Management System</title>
+</head>
+<body>
+    <h1>Employee Management System</h1>
+
+    <form action="/employee" method="POST">
+        <label>Employee Name:</label>
+        <input type="text" name="Name" required>
+        <br><br>
+
+        <label>Department:</label>
+        <input type="text" name="Department" required>
+        <br><br>
+
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <h2>Employee List</h2>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Employee ID</th>
+            <th>Name</th>
+            <th>Department</th>
+        </tr>
+
+        {% for employee in employees %}
+        <tr>
+            <td>{{ employee[0] }}</td>
+            <td>{{ employee[1] }}</td>
+            <td>{{ employee[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

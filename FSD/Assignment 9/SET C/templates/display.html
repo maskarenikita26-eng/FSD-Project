@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Students</title>
+</head>
+<body>
+    <h1>Student Details</h1>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Student ID</th>
+            <th>Name</th>
+            <th>Course</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student[0] }}</td>
+            <td>{{ student[1] }}</td>
+            <td>{{ student[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Add Student</a><br><br>
+    <a href="/update">Update Student</a><br><br>
+    <a href="/delete">Delete Student</a>
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding:0 ;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+header{
+    background-color:green;
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+nav a{
+    color: aquamarine;
+    text-decoration: none;
+    margin: 22px;
+}
